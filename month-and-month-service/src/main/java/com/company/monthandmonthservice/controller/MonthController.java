@@ -26,6 +26,7 @@ public class MonthController {
             new Months(12, "December")
     );
 
+//    Month convertor 
     @RequestMapping(value = "/month/{monthNumber}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String getCorrespondingMonthAndNumber(@PathVariable int monthNumber) {
@@ -67,16 +68,16 @@ public class MonthController {
 
 
     }
+//    Random month selector
+    @RequestMapping(value = "/monthNumber", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public String getARandomMonthInString() {
+        Random random = new Random();
+        int randomMonthInString = random.nextInt(listOfMonths.size());
+        return listOfMonths.get(randomMonthInString).getMonthInString();
 
-//    @RequestMapping(value = "/monthNumber", method = RequestMethod.GET)
-//    @ResponseStatus(HttpStatus.OK)
-//    public String getARandomMonthInString() {
-//        Random random = new Random();
-//        int randomMonthNumber = random.nextInt(listOfMonths.size());
-//        return listOfMonths.get(randomMonthNumber).getMonthInString();
-//
-//
-//    }
+
+    }
 
 
 
