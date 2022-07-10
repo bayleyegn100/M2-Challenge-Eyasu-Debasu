@@ -2,16 +2,16 @@ package com.company.monthandmonthservice.models;
 
 import java.util.Objects;
 
-public class MonthsModel {
+public class Months {
     private int monthNumber;
     private String monthInString;
 
-    public MonthsModel(int monthNumber, String monthInString) {
+    public Months(int monthNumber, String monthInString) {
         this.monthNumber = monthNumber;
         this.monthInString = monthInString;
     }
 
-    public MonthsModel() {
+    public Months() {
     }
 
     public int getMonthNumber() {
@@ -34,7 +34,7 @@ public class MonthsModel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MonthsModel that = (MonthsModel) o;
+        Months that = (Months) o;
         return monthNumber == that.monthNumber && Objects.equals(monthInString, that.monthInString);
     }
 
