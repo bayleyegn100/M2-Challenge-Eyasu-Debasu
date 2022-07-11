@@ -34,7 +34,7 @@ public class MonthController {
 //            if(monthNumber == i+1){
 //                return  monthNumber + " - " + listOfMonths.get(i).getMonthInString();
 //            } else {
-//                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Invalid Month Number entered. Enter a number between 1 and 12 inclusive.");
+//                throw new IllegalArgumentException("Invalid Month Number entered. Enter a number between 1 and 12 inclusive.");
 //            }
 //        }
 
@@ -63,7 +63,7 @@ public class MonthController {
         } else if (monthNumber == 12){
            return monthNumber + " - " + listOfMonths.get(11).getMonthInString();
         } else {
-            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Invalid Month Number entered. Enter a number between 1 and 12 inclusive.");
+            throw new IllegalArgumentException("Invalid Month Number entered. Enter a number between 1 and 12 inclusive.");
     }
 
 
