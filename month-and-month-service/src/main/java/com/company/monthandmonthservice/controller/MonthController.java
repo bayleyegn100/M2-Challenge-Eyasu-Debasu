@@ -26,7 +26,7 @@ public class MonthController {
             new Months(12, "December")
     );
 
-//    Month convertor 
+//    Month convertor
     @RequestMapping(value = "/month/{monthNumber}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String getCorrespondingMonthAndNumber(@PathVariable int monthNumber) {
