@@ -1,5 +1,8 @@
 package com.company.monthandmonthservice.models;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.Objects;
 
 
@@ -24,7 +27,7 @@ public class MathSolution {
         return operand1;
     }
 
-    public void setOperand1(int operand1) {
+    public void setOperand1(double operand1){
         this.operand1 = operand1;
     }
 
@@ -32,7 +35,7 @@ public class MathSolution {
         return operand2;
     }
 
-    public void setOperand2(int operand2) {
+    public void setOperand2(double operand2) {
         this.operand2 = operand2;
     }
 
