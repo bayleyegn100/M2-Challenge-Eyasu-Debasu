@@ -60,7 +60,9 @@ public class MathSolution {
            this.answer = this.operand1 * this.operand2;
        } else if(this.operation == "divide"){
            this.answer = this.operand1 / this.operand2;
-       }
+       } else {
+           throw new NumberFormatException("NumberFormat Exception: invalid input string");
+       };
     }
 
     @Override

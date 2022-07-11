@@ -72,10 +72,10 @@ public class MonthController {
     @RequestMapping(value = "/monthNumber", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String getARandomMonthInString() {
+
         Random random = new Random();
         int randomMonthInString = random.nextInt(listOfMonths.size());
         return listOfMonths.get(randomMonthInString).getMonthInString();
-
 
     }
 
