@@ -27,10 +27,7 @@ public class MonthControllerTest {
     public void shouldReturnMonthOWithCorrespondingNumber() throws Exception { //a jackson mapper has exception
         String outputJson = "9 - September";
 
-        mockMvc.perform(
-                        get("/month/9")
-                                .contentType(MediaType.APPLICATION_JSON)
-                )
+        mockMvc.perform(get("/month/9"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(outputJson));
