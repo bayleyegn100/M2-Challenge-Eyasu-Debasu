@@ -3,6 +3,7 @@ package com.company.monthandmonthservice.models;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 import static java.lang.Double.NaN;
@@ -11,7 +12,10 @@ import static java.lang.Double.doubleToLongBits;
 
 public class MathSolution {
 
+    @NotEmpty(message = "You must enter a value for operand1.")
     private String operand1;
+    @NotEmpty(message = "You must enter a value for operand2.")
+
     private String operand2;
     private String operation;
     private double answer;

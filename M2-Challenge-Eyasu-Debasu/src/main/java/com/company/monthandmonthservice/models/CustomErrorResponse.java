@@ -5,19 +5,19 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class CustomeErrorResponse {
+public class CustomErrorResponse {
     private String errorMessage;
     private int status;
     private String errorCode;
     @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="yyyy-MM-dd hh:mm:ss")
     private LocalDateTime timestamp;
 
-    public CustomeErrorResponse(String errorMessage, String errorCode) {
+    public CustomErrorResponse(String errorMessage, String errorCode) {
         this.errorMessage = errorMessage;
         this.errorCode = errorCode;
     }
 
-    public CustomeErrorResponse() {
+    public CustomErrorResponse() {
     }
 
     public String getErrorMessage() {
@@ -52,7 +52,7 @@ public class CustomeErrorResponse {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CustomeErrorResponse that = (CustomeErrorResponse) o;
+        CustomErrorResponse that = (CustomErrorResponse) o;
         return status == that.status && Objects.equals(errorMessage, that.errorMessage) && Objects.equals(errorCode, that.errorCode) && Objects.equals(timestamp, that.timestamp);
     }
 

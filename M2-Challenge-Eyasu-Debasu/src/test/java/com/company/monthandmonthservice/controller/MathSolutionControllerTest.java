@@ -28,13 +28,13 @@ public class MathSolutionControllerTest {
 
     public void shouldAddTwoNumbers() throws Exception {
         MathSolution inputRecord = new MathSolution();
-        inputRecord.setOperand1(13.23);
-        inputRecord.setOperand2(15.45);
+        inputRecord.setOperand1("13.23");
+        inputRecord.setOperand2("15.45");
         inputRecord.setOperation("add");
 
         MathSolution outputRecord = new MathSolution();
-        outputRecord.setOperand1(13.23);
-        outputRecord.setOperand2(15.45);
+        outputRecord.setOperand1("13.23");
+        outputRecord.setOperand2("15.45");
         outputRecord.setOperation("add");
         outputRecord.setAnswer();
 
@@ -54,13 +54,13 @@ public class MathSolutionControllerTest {
 
     public void shouldSubtractTwoNumbers () throws Exception {
         MathSolution inputRecord = new MathSolution();
-        inputRecord.setOperand1(210);
-        inputRecord.setOperand2(100);
+        inputRecord.setOperand1("210");
+        inputRecord.setOperand2("100");
         inputRecord.setOperation("subtract");
 
         MathSolution outputRecord = new MathSolution();
-        outputRecord.setOperand1(210);
-        outputRecord.setOperand2(100);
+        outputRecord.setOperand1("210");
+        outputRecord.setOperand2("100");
         outputRecord.setOperation("subtract");
         outputRecord.setAnswer();
 
@@ -82,13 +82,13 @@ public class MathSolutionControllerTest {
 
     public void shouldMultiplyTwoNumbers () throws Exception {
         MathSolution inputRecord = new MathSolution();
-        inputRecord.setOperand1(10);
-        inputRecord.setOperand2(12);
+        inputRecord.setOperand1("10");
+        inputRecord.setOperand2("12");
         inputRecord.setOperation("multiply");
 
         MathSolution outputRecord = new MathSolution();
-        outputRecord.setOperand1(10);
-        outputRecord.setOperand2(12);
+        outputRecord.setOperand1("10");
+        outputRecord.setOperand2("12");
         outputRecord.setOperation("multiply");
         outputRecord.setAnswer();
 
@@ -110,13 +110,13 @@ public class MathSolutionControllerTest {
 
     public void shouldDivideTwoNumbers () throws Exception {
         MathSolution inputRecord = new MathSolution();
-        inputRecord.setOperand1(50);
-        inputRecord.setOperand2(75);
+        inputRecord.setOperand1("50");
+        inputRecord.setOperand2("75");
         inputRecord.setOperation("divide");
 
         MathSolution outputRecord = new MathSolution();
-        outputRecord.setOperand1(50);
-        outputRecord.setOperand2(75);
+        outputRecord.setOperand1("50");
+        outputRecord.setOperand2("75");
         outputRecord.setOperation("divide");
         outputRecord.setAnswer();
 
@@ -133,6 +133,23 @@ public class MathSolutionControllerTest {
 
 
     }
+//    @Test
+//    public void shouldReturnUnprocessableEntityWhenOperand1AndOrOperand2AreEmpty() throws Exception{
+//        MathSolution inputRecord = new MathSolution();
+//        inputRecord.setOperand1("");
+//        inputRecord.setOperand2("");
+//        inputRecord.setOperation("add");
+//
+//
+//
+//        String inputJson =mapper.writeValueAsString(inputRecord);
+//
+//        mockMVC.perform(post("/add")
+//                .content(inputJson)
+//                .contentType(MediaType.APPLICATION_JSON)
+//               ).andDo(print())
+//                .andExpect(status().isUnprocessableEntity());
+//    }
 
 
 
