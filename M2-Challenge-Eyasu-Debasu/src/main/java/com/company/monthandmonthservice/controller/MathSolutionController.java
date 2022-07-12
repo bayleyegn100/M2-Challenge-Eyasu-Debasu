@@ -1,6 +1,6 @@
 package com.company.monthandmonthservice.controller;
 
-import com.company.monthandmonthservice.exception.ZeroIsBadException;
+//import com.company.monthandmonthservice.exception.ZeroIsBadException;
 import com.company.monthandmonthservice.models.MathSolution;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

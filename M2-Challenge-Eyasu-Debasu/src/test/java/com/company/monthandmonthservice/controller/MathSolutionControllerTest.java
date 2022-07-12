@@ -133,23 +133,32 @@ public class MathSolutionControllerTest {
 
 
     }
-//    @Test
-//    public void shouldReturnUnprocessableEntityWhenOperand1AndOrOperand2AreEmpty() throws Exception{
-//        MathSolution inputRecord = new MathSolution();
-//        inputRecord.setOperand1("");
-//        inputRecord.setOperand2("");
-//        inputRecord.setOperation("add");
-//
-//
-//
-//        String inputJson =mapper.writeValueAsString(inputRecord);
-//
-//        mockMVC.perform(post("/add")
-//                .content(inputJson)
-//                .contentType(MediaType.APPLICATION_JSON)
-//               ).andDo(print())
-//                .andExpect(status().isUnprocessableEntity());
-//    }
+    @Test
+    public void shouldReturnUnprocessableEntityWhenOperand1AndOrOperand2AreEmpty() throws Exception{
+        MathSolution inputRecord = new MathSolution();
+        inputRecord.setOperand1("");
+        inputRecord.setOperand2("12");
+        inputRecord.setOperation("add");
+
+        String inputJson = mapper.writeValueAsString(inputRecord);
+        mockMVC.perform(post("/add")
+                        .content(inputJson)
+                        .contentType(MediaType.APPLICATION_JSON)
+                ).andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+
+        inputRecord.setOperand1("20");
+        inputRecord.setOperand2("");
+        inputRecord.setOperation("add");
+
+        inputJson =mapper.writeValueAsString(inputRecord);
+
+        mockMVC.perform(post("/add")
+                .content(inputJson)
+                .contentType(MediaType.APPLICATION_JSON)
+               ).andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
 
 
 

@@ -30,6 +30,7 @@ public class MonthController {
     @RequestMapping(value = "/month/{monthNumber}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String getCorrespondingMonthAndNumber(@PathVariable int monthNumber) {
+
 //        for( int i = 0; i < listOfMonths.size(); i++){
 //            if(monthNumber == i+1){
 //                return  monthNumber + " - " + listOfMonths.get(i).getMonthInString();
@@ -66,7 +67,6 @@ public class MonthController {
             throw new IllegalArgumentException("Invalid Month Number entered. Enter a number between 1 and 12 inclusive.");
     }
 
-
     }
 //    Random month selector
     @RequestMapping(value = "/monthNumber", method = RequestMethod.GET)
@@ -79,18 +79,4 @@ public class MonthController {
 
     }
 
-
-
-
-//    @RequestMapping(value = "/month/{monthNumber}", method = RequestMethod.GET)
-//    @ResponseStatus(HttpStatus.OK)
-//    public Months getMonthByNumber(@PathVariable int monthNumber) {
-//        Months output = null;
-//        for (Months month : listOfMonths) {
-//            if (month.getMonthNumber() == monthNumber) {
-//                output = month;
-//            }
-//        }
-//        return output;
-//    }
 }
