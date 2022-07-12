@@ -22,23 +22,23 @@ public class ControllerExceptionHandler {
         return responseEntity;
     }
 
-    @ExceptionHandler(value = {IndexOutOfBoundsException.class})
-    @ResponseStatus(HttpStatus.MOVED_PERMANENTLY)
-    public ResponseEntity<CustomeErrorResponse> handleIndexOutOfBounds(IndexOutOfBoundsException e) {
-        CustomeErrorResponse error = new CustomeErrorResponse(HttpStatus.MOVED_PERMANENTLY.toString(), e.getMessage());
-        error.setTimestamp(LocalDateTime.now());
-        error.setStatus(HttpStatus.MOVED_PERMANENTLY.value());
-        ResponseEntity<CustomeErrorResponse> responseEntity = new ResponseEntity<>(error, HttpStatus.MOVED_PERMANENTLY);
-        return responseEntity;
-    }
-
-    @ExceptionHandler(value = {ZeroIsBadException.class})
-    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    public ResponseEntity<CustomeErrorResponse> handleZeroException(ZeroIsBadException e) {
-        CustomeErrorResponse error = new CustomeErrorResponse(HttpStatus.I_AM_A_TEAPOT.toString(), e.getMessage());
-        error.setTimestamp(LocalDateTime.now());
-        error.setStatus(HttpStatus.I_AM_A_TEAPOT.value());
-        ResponseEntity<CustomeErrorResponse> responseEntity = new ResponseEntity<>(error, HttpStatus.I_AM_A_TEAPOT);
-        return responseEntity;
-    }
+//    @ExceptionHandler(value = {IndexOutOfBoundsException.class})
+//    @ResponseStatus(HttpStatus.MOVED_PERMANENTLY)
+//    public ResponseEntity<CustomeErrorResponse> handleIndexOutOfBounds(IndexOutOfBoundsException e) {
+//        CustomeErrorResponse error = new CustomeErrorResponse(HttpStatus.MOVED_PERMANENTLY.toString(), e.getMessage());
+//        error.setTimestamp(LocalDateTime.now());
+//        error.setStatus(HttpStatus.MOVED_PERMANENTLY.value());
+//        ResponseEntity<CustomeErrorResponse> responseEntity = new ResponseEntity<>(error, HttpStatus.MOVED_PERMANENTLY);
+//        return responseEntity;
+//    }
+//
+//    @ExceptionHandler(value = {ZeroIsBadException.class})
+//    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
+//    public ResponseEntity<CustomeErrorResponse> handleZeroException(ZeroIsBadException e) {
+//        CustomeErrorResponse error = new CustomeErrorResponse(HttpStatus.I_AM_A_TEAPOT.toString(), e.getMessage());
+//        error.setTimestamp(LocalDateTime.now());
+//        error.setStatus(HttpStatus.I_AM_A_TEAPOT.value());
+//        ResponseEntity<CustomeErrorResponse> responseEntity = new ResponseEntity<>(error, HttpStatus.I_AM_A_TEAPOT);
+//        return responseEntity;
+//    }
 }

@@ -5,16 +5,18 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Objects;
 
+import static java.lang.Double.NaN;
+import static java.lang.Double.doubleToLongBits;
 
 
 public class MathSolution {
 
-    private double operand1;
-    private double operand2;
+    private String operand1;
+    private String operand2;
     private String operation;
     private double answer;
 
-    public MathSolution(int operand1, int operand2, String operation, int answer) {
+    public MathSolution(String operand1, String operand2, String operation, int answer) {
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.operation = operation;
@@ -24,21 +26,20 @@ public class MathSolution {
     public MathSolution(){}
 
     public double getOperand1() {
-        return operand1;
+        return Double.parseDouble(operand1);
     }
 
-    public void setOperand1(double operand1){
+    public void setOperand1(String operand1){
         this.operand1 = operand1;
-    }
+   }
 
     public double getOperand2() {
-        return operand2;
+        return Double.parseDouble(operand2);
     }
 
-    public void setOperand2(double operand2) {
+    public void setOperand2(String operand2) {
         this.operand2 = operand2;
-    }
-
+}
     public String getOperation() {
         return operation;
     }
@@ -52,17 +53,20 @@ public class MathSolution {
     }
 
     public void setAnswer() {
+
+       if(Double.parseDouble(operand2) == 0 && this.operation == "divide"){
+           throw new IllegalArgumentException("we can not divide a number by 0(zero).");
+       }
+
        if(this.operation == "add"){
-           this.answer = this.operand1 + this.operand2;
+           this.answer = Double.parseDouble(operand1) + Double.parseDouble(operand2);
        } else if(this.operation == "subtract"){
-           this.answer =this.operand1 - this.operand2;
+           this.answer = Double.parseDouble(operand1) - Double.parseDouble(operand2);
        } else if(this.operation == "multiply"){
-           this.answer = this.operand1 * this.operand2;
+           this.answer = Double.parseDouble(operand1) * Double.parseDouble(operand2);
        } else if(this.operation == "divide"){
-           this.answer = this.operand1 / this.operand2;
-       } else {
-           throw new NumberFormatException("NumberFormat Exception: invalid input string");
-       };
+           this.answer = Double.parseDouble(operand1) / Double.parseDouble(operand2);
+       }
     }
 
     @Override
